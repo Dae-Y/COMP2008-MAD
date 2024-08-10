@@ -1,4 +1,4 @@
-# CalculatorAppAndroid
+# Mobile Application Development
 COMP2008 Mobile Application Development
 
-To build a simple calculator app with Android Studio
+To practice using Android Studio to build some simple apps

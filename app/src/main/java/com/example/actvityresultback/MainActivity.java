@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         note03Button = findViewById(R.id.note03Button);
         note04Button = findViewById(R.id.note04Button);
 
+        // Restore the notes list if available, Rotating screen
+        if (savedInstanceState != null) {
+            notes = savedInstanceState.getStringArrayList("NOTES_LIST");
+        }
+
         // Initialize ActivityResultLauncher for DetailActivity
         detailActivityLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -108,4 +113,14 @@ public class MainActivity extends AppCompatActivity {
             printActivityLauncher.launch(intent);
         }
     }
+
+
+    // rotate screen, save before the activity is destroyed
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putStringArrayList("NOTES_LIST", new ArrayList<>(notes));
+    }
+
+
 }

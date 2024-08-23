@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- constraint block contains 4 notes and add new note button -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout00"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- guide line to separate middle -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <Button
+            android:id="@+id/addNewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add new note"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline01" />
+
+        <!-- constraint layout for note 1-4 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline01"
+            app:layout_constraintStart_toStartOf="parent" >
+
+            <!-- guide line for note 1-4 -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.14" />
+
+            <Button
+                android:id="@+id/note01Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Note 1"
+                app:layout_constraintStart_toStartOf="@+id/guideline02" />
+
+            <Button
+                android:id="@+id/note02Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Note 2"
+                app:layout_constraintStart_toStartOf="@+id/guideline02"
+                app:layout_constraintTop_toBottomOf="@+id/note01Button" />
+
+            <Button
+                android:id="@+id/note03Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Note 3"
+                app:layout_constraintStart_toStartOf="@+id/guideline02"
+                app:layout_constraintTop_toBottomOf="@+id/note02Button" />
+
+            <Button
+                android:id="@+id/note04Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Note 4"
+                app:layout_constraintStart_toStartOf="@+id/guideline02"
+                app:layout_constraintTop_toBottomOf="@+id/note03Button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- constraint layout for note 1-4 -->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,51 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import android.content.res.Configuration;
 
-/*
-public class MenuFragment extends Fragment {
-    private MyViewModel myViewModel;
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.menu_fragment, container, false);
-        myViewModel = new ViewModelProvider(requireActivity()).get(MyViewModel.class);
-        Button button = view.findViewById(R.id.addNewButton);
-
-        myViewModel.getNoteTitle().observe(getViewLifecycleOwner(), title -> {
-            if (!title.isEmpty()) {
-                button.setText("Edit Note");
-                // Check if the current orientation is landscape
-                if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                    // Disable button click in landscape mode
-                    button.setEnabled(false);
-                } else {
-                    // Enable button click in portrait mode
-                    button.setEnabled(true);
-                }
-            } else {
-                button.setText("Add New Note");
-                button.setEnabled(true);
-            }
-        });
-
-        button.setOnClickListener(v -> {
-            if (getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE) {
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new NoteTakingFragment())
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
-
-        return view;
-    }
-}
-*/
-
 public class MenuFragment extends Fragment {
     private MyViewModel myViewModel;
 
@@ -111,10 +66,8 @@ public class MenuFragment extends Fragment {
             button.setVisibility(View.VISIBLE); // Ensure button is visible in portrait mode as well
         }
     }
-}
 
 
 
-
-
+} // End MenuFragment
 

@@ -7,38 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 import android.content.res.Configuration;
 
-/*
-public class MainActivity extends AppCompatActivity {
-
-    private MyViewModel myViewModel;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        myViewModel = new ViewModelProvider(this).get(MyViewModel.class);
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new MenuFragment())
-                    .commit();
-        }
-
-        myViewModel.isNoteSaved().observe(this, isSaved -> {
-            if (isSaved) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new MenuFragment())
-                        .commit();
-            }
-        });
-    }
-} */
-
-import android.content.res.Configuration;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-}
+
+
+} // END MainActivity
+
+
+
 
 
 
